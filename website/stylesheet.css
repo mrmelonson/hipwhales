@@ -1,0 +1,103 @@
+body {
+    background: #383838; /* Old browsers */
+    background: -moz-linear-gradient(top, #383838 4%, #000000 87%, #000000 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #383838 4%,#000000 87%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #383838 4%,#000000 87%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#383838', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h1 {
+    display: block;
+    width: 90%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: lightgray;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 800%;
+}
+
+.breaker {
+    display: block;
+    width: 90%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: lightgray;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 800%;
+}
+
+.quote_box {
+    display: block;
+    width: 90%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: lightgray;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 300%;
+}
+
+h3 {
+    display: block;
+    width: 60%;
+    text-align: right;
+    margin-left: auto;
+    margin-right: auto;
+    color: lightgray;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 150%;
+}
+
+p {
+    display: block;
+    width: 70%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: lightgray;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 200%;
+}
+
+.explore {
+    display: block;
+    width: 70%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: lightgray;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 300%;
+}
+
+.img {
+    position: relative;
+    text-align: center;
+}
+
+.btn{
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    border: 2px solid rgb(187, 187, 187);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    border-radius: 15px;
+}
+
+
+
