@@ -1,44 +1,178 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>title</title>
-  <link rel="stylesheet" href="stylesheet.css" type="text/css">
+<head>
+  <title>Hip Whales</title>
+  <link rel="icon" href="icon.png">
+  <link rel="stylesheet" href="css.css" type="text/css"/>
+  <style>
+
+  
+  
+  .awesome { text-align: center;
+  left:49%;
+  }
+  
+  .whale { text-align: center;
+  left:49%;
+  }
+  
+  .Whale{
+    border-radius:12px;
+  }
+  
+    .button {
+  display: inline-block;
+  border-radius: 12px;
+  background-color: #4CAf50;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  font-family: "Comic Sans MS";
+  padding: 20px;
+  width: 200px;
+  transition: all 0.1s;
+  cursor: pointer;
+  margin: 5px;
+  box-shadow: 0 9px #999;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+      background-color: none;
+    -webkit-animation-name: example; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 0.2s; /* Chrome, Safari, Opera */
+    animation-name: example;
+    animation-duration: 0.2s;
+    animation-iteration-count: infinite;
+}
+
+.button span:after {
+  content: "!!";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: 0px;
+  transition: 0.5s;
+      background-color: none;
+    -webkit-animation-name: example; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 0.2s; /* Chrome, Safari, Opera */
+    animation-name: example;
+    animation-duration: 0.2s;
+    animation-iteration-count: infinite;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+      background-color: none;
+    -webkit-animation-name: example; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 0.2s; /* Chrome, Safari, Opera */
+    animation-name: example;
+    animation-duration: 0.2s;
+    animation-iteration-count: infinite;
+}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+      background-color: none;
+    -webkit-animation-name: example; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 0.2s; /* Chrome, Safari, Opera */
+    animation-name: example;
+    animation-duration: 0.2s;
+    animation-iteration-count: infinite;
+}
+  
+.button {
+    background-color: none;
+    -webkit-animation-name: example; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 0.2s; /* Chrome, Safari, Opera */
+    animation-name: example;
+    animation-duration: 0.2s;
+    animation-iteration-count: infinite;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes example {
+    0% {color: red;}
+    20% {color: lime;}
+    40% {color: yellow;}
+    60% {color: blue;}
+    80% {color: purple;}
+    100% {color: red;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    0% {color: red;}
+    20% {color: lime;}
+    40% {color: yellow;}
+    60% {color: blue;}
+    80% {color: purple;}
+    100% {color: red;}
+}
+    
+  </style>
   </head>
   <body>
-   <h1>-- The Taming Of -- <br> The Shrew</h1>
+        <script>
+  function play(){
+       var audio = document.getElementById("audio");
+       audio.play();
+                 }
+                 
+   </script>
+   
+   <div id="header">
+      <img class="logo" src="logo.png">
+   </div>
+   
+     <ul>
+     <li><a class="secretwhale"href="secretwhale.html">Whale</a></li>
+     <li><a class="help" href="helpwhale.html">Help whales</a></li>
+     <li><a class="Updates" href="updates.html">Updates</a></li>
+     <li><a class="gallery" href="gallery.html">Gallery</a></li>
+     <li><a class="Us" href="aboutus.html">About us</a></li>
+     <li><a class="contacts" href="contacts.html">Contacts</a></li>
+     </ul>
 
-   <center><img class="img" src="shush.jpg" alt="Paris" width="50%" height="50%"></center>
+  <div id="section">
+  <h2>Welcome to HipWhales.com</h2>
+  <h3>Here we have the finest and hippest whales on earth</h3>
+  
+  
+  <center><button onclick="play()" class="button">AWESOME</button></center>
+  <audio id="audio" src="awesome.wav" ></audio>
+  </div>
 
-   <h1 class="breaker">----------------</h1>
-
-   <h2 class="quote_box">All the worlds a stage, <br>
-   And all the men and women merely players; <br> 
-   They have their exits and their entrances; <br>
-   And one man in his time plays many parts,  <br>
-   His acts being seven ages.” </h2>
-
-   <h3>- William Shakespeare</h3>
-
-   <h1 class="breaker">----------------</h1>
-
-   <p>The taming of the shrew remains current for the 21st century as is explores a dark side of human nature, that is the inevitability of those in power to take advantage, manipulate and control those beneath them. </p>
-   <p>We see this within the taming of the shrew and those in power such as Batista and Petruchio who don’t think about the people below them, but rather how they can manipulate the situation in their favour.</p>
-   <p>The play also explores themes of transformation through Petruchio manipulateing, controling and transforming Kate into an obediant and submissive wife.</p>
-
-    <p class="explore">Explore</p>
-
-    <center><a href="power.html" class="btn">power and control</a></center>
-    <center><a href="transform.html" class="btn">transformation</a></center>
-    <br>
-    <br>
-
-    <h1>Conclusion</h1>
-
-    <p>I believe that taming of the shrew remains as a current play in the 21st century as it reflects vital parts even today of the human condition.</p>
-  <br><br><br><br><br>
+  <h3>Click the whale to view our gallery</h3>
+  <div class="whale">
+    <a class="gallery" href="gallery.html">
+  <img class="Whale" src="img2.jpg" alt="whales"/>
+  </a>
+  </div>
+  </div>
+  <div id="footer">
+    <p class="footer">Copyright Hipwhale.com 2016 - 17 &copy;</p>
+  </div>
+  
   </body>
 </html>
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,134 @@
+    body {
+    background: -webkit-linear-gradient(left, red, orange, yellow, green, blue, indigo, violet); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(left, red, orange, yellow, green, blue, indigo, violet); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(left, red, orange, yellow, green, blue, indigo, violet); /* For Fx 3.6 to 15 */
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); /* Standard syntax (must be last) */
+    margin:0px;
+  }
+
+#header {
+  background:-webkit-liner-gradient(left, lime, white, #99ff00);
+  background:-o-linear-gradient(left, lime,white, #99ff00);
+  background:-moz-linear-gradient(left, lime, white, #99ff00);
+  background: linear-gradient(to right, lime, white, #99ff00);
+  text-align: center;
+  color:red;
+  color: 000000;
+  font-family: "Comic Sans MS";
+  vertical-align:middle;
+  position:top;
+  font-size:200%;
+  padding-top:1px;
+  padding-bottom:1px;
+}
+
+#nav {
+  background:-webkit-liner-gradient(bottom, purple, white);
+  background:-o-linear-gradient(bottom, purple, white);
+  background:-moz-linear-gradient(bottom, purple, white);
+  background: linear-gradient(to top, purple, white);
+  position:fixed;
+  height:300px;
+  width:300px;
+}
+ 
+ li a:hover {
+  background-color:black;
+  transition-duration:0.4s;
+    background-color: black;
+    color:white;
+  
+}
+
+
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 10%;
+    background-color: #f1f1f1;
+    position: absolute; /* Make it stick, even on scroll */
+    overflow: auto; /* Enable scrolling if the sidenav has too much content */
+    border: 1px solid #555;
+    float:left;
+    font-family:"Comic Sans MS";
+    font-size:180%;
+    border-radius: 12px;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 0 8px 16px;
+    text-decoration: none;
+    border-bottom: 1px solid #555;
+    background:-webkit-liner-gradient(bottom, purple, lightblue, purple);
+    background:-o-linear-gradient(bottom, purple, lightblue, purple);
+    background:-moz-linear-gradient(bottom, purple, lightblue, purple);
+    background: linear-gradient(to top, purple, lightblue, purple);
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+#footer {
+  background:-webkit-liner-gradient(left, lime, white);
+  background:-o-linear-gradient(left, lime,white);
+  background:-moz-linear-gradient(left, lime, white);
+  background: linear-gradient(to right, lime, white);
+  text-align: center;
+  color:red;
+  color: 000000;
+  font-family: "Comic Sans MS";
+  vertical-align:bottom;
+  position:top;
+  padding-top:1px;
+  padding-bottom:1px;
+}
+
+h3 { text-align: center;
+  font-size:300%%;
+  color:yellow;
+  font-family: "Comic Sans MS";
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  
+  }
+
+h2 { text-align: center;
+  font-size:150%;
+  color:red;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  font-family: "Comic Sans MS";
+  }
+
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes example {
+    0% {color: red;}
+    20% {color: lime;}
+    40% {color: yellow;}
+    60% {color: blue;}
+    80% {color: lime;}
+    100% {color: red;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    0% {color: red;}
+    20% {color: lime;}
+    40% {color: yellow;}
+    60% {color: blue;}
+    80% {color: lime}
+    100% {color: red;}
+}
+
+
+    
+
+
+
