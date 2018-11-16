@@ -1,10 +1,22 @@
-    body {
+body {
+  animation: animate 0.5s linear infinite;
+}
+
+@keyframes animate {
+  0% {
     background: -webkit-linear-gradient(left, red, orange, yellow, green, blue, indigo, violet); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(left, red, orange, yellow, green, blue, indigo, violet); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(left, red, orange, yellow, green, blue, indigo, violet); /* For Fx 3.6 to 15 */
     background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); /* Standard syntax (must be last) */
-    margin:0px;
   }
+  100% {
+    background: -webkit-linear-gradient(left, violet, indigo, blue, green, yellow, orange, red); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(left, violet, indigo, blue, green, yellow, orange, red); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(left, violet, indigo, blue, green, yellow, orange, red); /* For Fx 3.6 to 15 */
+    background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red); /* Standard syntax (must be last) */
+  }
+}
+
 
 #header {
   background:-webkit-liner-gradient(left, lime, white, #99ff00);
@@ -90,7 +102,7 @@ li:last-child {
 }
 
 h3 { text-align: center;
-  font-size:300%%;
+  font-size:300%;
   color:yellow;
   font-family: "Comic Sans MS";
   -webkit-text-stroke-width: 1px;
