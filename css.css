@@ -86,7 +86,7 @@ li:last-child {
     border-bottom: none;
 }
 
-#footer {
+#footer, #footer_text {
   background:-webkit-liner-gradient(left, lime, white);
   background:-o-linear-gradient(left, lime,white);
   background:-moz-linear-gradient(left, lime, white);
@@ -117,27 +117,6 @@ h2 { text-align: center;
   -webkit-text-stroke-color: black;
   font-family: "Comic Sans MS";
   }
-
-
-/* Chrome, Safari, Opera */
-@-webkit-keyframes example {
-    0% {color: red;}
-    20% {color: lime;}
-    40% {color: yellow;}
-    60% {color: blue;}
-    80% {color: lime;}
-    100% {color: red;}
-}
-
-/* Standard syntax */
-@keyframes example {
-    0% {color: red;}
-    20% {color: lime;}
-    40% {color: yellow;}
-    60% {color: blue;}
-    80% {color: lime}
-    100% {color: red;}
-}
 
 
     
