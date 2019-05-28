@@ -4,6 +4,7 @@
   <title>Hip Whales</title>
   <link rel="icon" href="icon.png">
   <link rel="stylesheet" href="css.css" type="text/css"/>
+  <script type="text/javascript" src="javascript.js"></script>
   <style>
 
   
@@ -25,26 +26,21 @@
   </style>
   </head>
   <body>
-        <script>
-  function play(){
-       var audio = document.getElementById("audio");
-       audio.play();
-                 }
-                 
-   </script>
+
    
    <div id="header">
       <h1>About us</h1>
    </div>
    
-     <ul>
-      <li><a class="index" href="index.html">Home</a></li>
-     <li><a class="secretwhale"href="secretwhale.html">Whale</a></li>
-     <li><a class="help" href="helpwhale.html">Blank</a></li>
-     <li><a class="Updates" href="updates.html">Updates</a></li>
-     <li><a class="contacts" href="contacts.html">Contacts</a></li>
-     <li><a class="gallery" href="gallery.html">Gallery</a></li>
-     </ul>
+   <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="secretwhale.html">Whale</a></li>
+      <li><a href="helpwhale.html">Help whales</a></li>
+      <li><a href="updates.html">Updates</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a class="active" href="aboutus.html">About us</a></li>
+      <li><a href="contacts.html">Contacts</a></li>
+    </ul>
 
   <div id="section">
   <h2>Our promise</h2>
@@ -59,8 +55,8 @@
   </div>
 
   <div id="footer">
-    <p class="footer">Created by Zelenyy -- Copyright Hipwhale.info 2016 - * &copy;</p>
-  </div>
+      <p id="footer_text"></p>
+    </div>
   
   </body>
 </html>
