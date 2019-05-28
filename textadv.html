@@ -1,0 +1,923 @@
+<!DOCTYPE html> <!-- Me sauce code -->
+<html>
+<head>
+	<title>Project</title>
+	<style type="text/css">
+	body{
+		background-color:lightgrey;
+	}
+		button{
+			border-radius: 10px;
+			background: lightblue;	
+		}
+		#div{
+			display: inline;
+		}
+		#welf{
+			display: none;
+		}
+		#welfshow{
+			display: block;
+			width: 30px;
+		}
+		#inventory{
+			display: none;
+		}
+		#inventorytext{
+			font-weight: bold;
+		}
+		#inventorytext:hover + #inventory{
+			display: block;
+		}
+		#inventorytextanimation{
+			font-weight: bold;
+			animation-duration: 1s;
+			animation-name:flash;
+			animation-iteration-count: 1;
+		}
+		#button1{
+			display: none;
+		}
+		#button2{
+			display: none;
+		}
+		#button5{
+			display: none;
+		}
+		#inputbox{
+			display: none;
+		}
+		#button3{
+			display: none;
+		}
+		#button4{
+			display: none;
+		}
+		@keyframes flash{
+    0% {
+        background-color: transparent;
+    } 
+    50% {
+        background-color: yellow;
+    }
+    100% {
+    	background-color: transparent;
+    }
+}
+@-webkit-keyframes flash{
+    0% {
+        background-color: transparent;
+    } 
+    50% {
+        background-color: yellow;
+    }
+    100% {
+    	background-color: transparent;
+    }
+}
+	</style>
+</head>
+<body onload="start()">
+
+<h3 id="p3"></h3>
+<p id="explain"></p>
+<div id="div">
+<input type="box" id="inputbox">
+<button id="button1"></button>
+<button id="button2"></button>
+<button id="button3"></button>
+<button id="button4"></button>
+<button id="button5"></button>
+</div>
+<p id="inventorytext">Inventory:</p>
+<div id="inventory">
+<p id="p2"></p>
+<p id="p1"></p>
+<p id="gold"></p>
+<p id="cogs"></p>
+<p id='wolf'></p>
+<p id="screwdriveritem"></p>
+<img id="welf" src="welf.jpg">
+</div>
+
+
+<script type="text/javascript">
+function start() {
+	function colour() {
+		var rand = Math.floor(Math.random() * 4);
+		if (rand = 0) {
+			getElementsByTagName('body').background.color = 'tomato';
+			getElementsByTagName('button').background.color = 'salmon';
+		}
+		else if (rand = 1) {
+			getElementsByTagName('body').background.color = 'lightgrey';
+			getElementsByTagName('button').background.color = 'lightblue';
+		}
+		else if (rand = 2) {
+			getElementsByTagName('body').background.color = '#009900';
+			getElementsByTagName('button').background.color = '#004d00';
+		}
+		else if (rand = 3) {
+			getElementsByTagName('body').background.color = '#e085c2';
+			getElementsByTagName('button').background.color = '#b62f89';
+		}
+	}
+function flash() { // making text flash
+	get('inventorytext').id = "inventorytextanimation";
+	window.setTimeout(flashstop, 1000);
+}
+function flashstop() { // stopping the flash
+	get('inventorytextanimation').id = ("inventorytext");
+}
+function get(x){ // getting element by id
+	return document.getElementById(x);
+}
+function hide(x) { // hiding the fixed HTML button element
+	return get(x).style.display = 'none';
+}
+function show(x) { // showing HTML button
+	return get(x).style.display = 'inline';
+}
+function hideall() {
+	get('button1').style.display = 'none';
+	get('button2').style.display = 'none';
+	get('button3').style.display = 'none';
+	get('button5').style.display = 'none';
+	get('button4').style.display = 'none';
+	get('inputbox').style.display = 'none';
+}
+function animation() { // The ... animation for code
+	var i = 0;
+	var dots = ['. .', '. . .', '. . . .'];
+	var ani = setInterval(dotmaker ,333);
+	get('p3').innerHTML = '.';
+	function dotmaker() {
+		if (i > 2) {
+			clearInterval(ani);
+		} 
+		else {
+		get('p3').innerHTML = dots[i];
+		i++;
+	}
+	}
+	}
+	show('inputbox');
+	get('p3').innerHTML = 'What is your name?';
+	get('explain').innerHTML = 'Hover over inventory to see what you have </br> Yellow flashes mean you have gained something';
+	get('p2').innerHTML = 'You have nothing';
+	show('button1')
+	get('button1').innerHTML = 'START GAME'
+	get('button1').onclick = realstart;
+	var torch = 0;
+	var compass = 0;
+	var gold = 0;
+	var northcoords = 0;
+	var eastcoords = 0;
+	var searchedhouse = 0;
+	var cog = 0;
+	var activemachine = 0;
+	var key = 0;
+	var binarycount = -0;
+	var direction = 0;
+	var petwolf = 0;
+	var wolfname = '';
+	var hascode = 0;
+
+function realstart(){
+	var name = inputbox.value;
+	hide('inputbox');
+	if (name == '') {
+		var name = 'The Nameless One';
+		console.log('nice name idiot');
+	}
+	get('explain').innerHTML = '';
+	var enviroment = [name+ ', You are in a snowy forest']
+	document.getElementById('p3').innerHTML = ''+enviroment+'';
+	show('button1');
+	show('button2');
+	get('button1').onclick = wait;
+	get('button2').onclick = walk;
+	get('button1').innerHTML = 'Wait';
+	get('button2').innerHTML = 'Walk around';
+
+		function walk() { //Walk function
+			animation();
+			hideall();
+			setTimeout(function() {
+		var walktext = ['you walkaround for a bit, you find nothing', 'you see some wolves', 'you find a cave', 'you see something on the ground']
+		var rand = Math.floor(Math.random() * 7);
+		if (rand == 4) { //chance for the wolves
+			get('p3').innerHTML = walktext[1];
+			show('button1');
+			get('button1').innerHTML = 'Oh no';
+			get('button1').onclick = wolves;
+		}
+		else if (rand < 3) { //chance for a cave
+			if (compass > 0) {
+					show('button3')
+					get('button3').innerHTML = 'Navigate with compass';
+					get('button3').onclick = navigate;
+				}
+			get('p3').innerHTML = walktext[2];
+			show('button1');
+			get('button1').innerHTML = 'Cool a cave';
+			get('button1').onclick = cave;
+
+		}
+		else if (rand == 5 && torch < 1) { // chance for torch
+			get('p3').innerHTML = walktext[3];
+			show('button1');
+			show('button2');
+			get('button1').innerHTML = 'Investigate';
+			get('button2').innerHTML = 'Leave it be';
+			get('button1').onclick = torchitemadd;
+			get('button2').onclick = walk;
+		}
+		else { // chance for nothing
+			get('p3').innerHTML = walktext[0];
+			show('button1')
+			show('button2')
+			get('button1').innerHTML = 'Wait';
+			get('button2').innerHTML = 'Walk around'
+			get('button1').onclick = wait;
+			get('button2').onclick = walk;
+			if (compass > 0) {
+			show('button3');
+			get('button3').innerHTML = 'Navigate with compass';
+			get('button3').onclick = navigate;
+		}
+		}
+			function torchitemadd() {  // adding torch to inventory
+		if (torch == 0) {
+			get('p3').innerHTML = 'you have found a torch!';
+			torch++;
+			flash('inventorytext');
+			show('button1');
+			show('button2');
+			get('button1').innerHTML = 'Wait';
+			get('button2').innerHTML = 'Walk around';
+				if (torch == 1) {
+			get('p2').innerHTML = 'You have a torch';
+			console.log('congratulations you have ' + torch + ' torch, are you proud?');
+			}
+		} 
+	}
+			function cave() { // cave function
+				hideall();
+		get('p3').innerHTML = 'you look in, it is very dark.';
+		show('button1');
+		show('button2');
+		get('button1').innerHTML = 'Go inside the cave';
+		get('button2').innerHTML = 'Walk away from the cave';
+		get('button1').onclick = insidecave;
+		get('button2').onclick = walk;
+		function insidecave() {
+			if (torch == 1) {
+				get('p3').innerHTML = 'you go inside the cave.';
+				var cavetext = ['you see some bones', 'you see a chest', 'you dont see anything of interest'];
+				show('button1')
+				show('button2')
+				get('button1').innerHTML = 'Walk further into the cave';
+				get('button2').innerHTML = 'Exit the cave';
+				get('button1').onclick = furtherincave;
+				get('button2').onclick = cave;
+				var rand = Math.floor(Math.random() * 3);
+				function furtherincave() {
+				if (rand == 0) {
+					get('p3').innerHTML = cavetext[0];
+					hide('button2');
+					show('button1');
+					get('button1').innerHTML = 'Search the bones';
+					get('button1').onclick = bonesfunc;
+					function bonesfunc() {
+						if (compass > 0) {
+							get('p3').innerHTML = 'you have a compass already';
+							show('button1');
+							show('button2');
+							show('button3');
+							get('button1').innerHTML = 'Wait outside cave';
+							get('button2').innerHTML = 'Walk away from the cave';
+							get('button3').innerHTML = 'Navigate with compass';
+							get('button1').onclick = wait;
+							get('button2').onclick = walk;
+							get('button3').onclick = navigate;
+						}
+						else if (compass < 1) {
+							get('p3').innerHTML = 'you find a compass and you see the numbers 3,1 on the wall';
+							compass++
+							flash('inventorytext');
+							show('button1');
+							show('button2');
+							get('button1').innerHTML = 'Wait outside the cave';
+							get('button2').innerHTML = 'Walk away from the cave';
+							get('button2').onclick = walk;
+							get('button1').onclick = wait;
+							console.log('wow a compass Which you have ' + compass + ' of, damn son');
+							if (compass > 0) {
+								get('p1').innerHTML = 'You have a compass(3,1)';
+							}
+							show('button3');
+							get('button3').innerHTML = 'Navigate with compass'
+							get('button3').onclick = navigate;
+					}
+				}
+			}
+				else if (rand == 1) {
+					hideall();
+					get('p3').innerHTML = cavetext[1];
+					show('button1');
+					get('button1').innerHTML = 'Open the chest';
+					get('button1').onclick = chestfunc;
+					function chestfunc() {
+						flash('inventorytext');
+						 var rand = Math.floor(Math.random() * 10)
+						 rand = rand + 2;
+						 get('p3').innerHTML = 'you find '+rand+' gold coins';
+						gold = rand + gold;
+						 if (gold > 0 ) {
+								get('gold').innerHTML = 'You have ' +gold+ ' gold coins';
+							}
+						 show('button1');
+						 show('button2');
+						 get('button1').innerHTML = 'Wait outside the cave';
+						 get('button2').innerHTML = 'Walk away from the cave';
+						 get('button2').onclick = walk;
+						 get('button1').onclick = wait;
+						 console.log('you have da bling bling exactly ' + gold + ' of da bling bling');	
+					}
+				}
+			
+				else if (rand ==2) {
+					get('p3').innerHTML = cavetext[2];
+					show('button1');
+					show('button2');
+					get('button1').innerHTML = 'Wait outside the cave';
+					get('button2').innerHTML = 'Walk away from the cave';
+					get('button2').onclick = walk;
+					get('button1').onclick = wait;
+					}
+				}
+			}	
+			else {
+				get('p3').innerHTML = 'it is to dark to see inside the cave';
+				show('button1');
+				get('button1').innerHTML = 'Wait outside the cave';
+				get('button1').onclick = wait;
+				show('button2');
+				get('button2').innerHTML = 'Walk away from the cave';
+				get('button2').onclick = walk;
+
+			}
+		}
+	}
+
+			function wolves() { // wolves function
+			hideall();
+			show('button1');
+			show('button2');
+			show('button3');
+			get('button1').innerHTML = 'Do nothing';
+			get('button2').innerHTML = 'Hide';
+			get('button3').innerHTML = 'RUN!';
+			get('button1').onclick = x;
+			get('button2').onclick = y;
+			get('button3').onclick = z;
+			function x() {
+				hideall();
+				var rand = Math.floor(Math.random() * 4);
+				if (rand == 1) {
+					get('p3').innerHTML = 'you remain still and quiet and they pass without noticing you';
+					show('button1');
+					show('button2');
+					get('button1').innerHTML = 'Wait';
+					get('button2').innerHTML = 'Walk around';
+					get('button1').onclick = wait;
+					get('button2').onclick = walk;
+				} 
+				else {
+					get('p3').innerHTML = 'you remain still, but one of the wolves turn towards you and starts growling, the last thing you see is a pack of wolves running at you.(reload to try again)';
+				}	
+			}
+			function y() {
+				hideall();
+				var rand = Math.floor(Math.random() * 10);
+				if (rand == 0) {
+					get('p3').innerHTML = 'you try to make it behind the trees but the wolves see you.(reload to try again)'
+				} 
+				else {
+					get('p3').innerHTML = 'you quickly hide behind some trees and let them pass, you come out after they pass.'
+					show('button1');
+					show('button2');
+					get('button1').innerHTML = 'Wait';
+					get('button2').innerHTML = 'Walk around';
+					get('button1').onclick = wait;
+					get('button2').onclick = walk;
+					if (compass > 0) {
+						show('button3');
+						get('button3').innerHTML = 'Navigate with compass';
+						get('button3').onclick = navigate;
+					}
+				}
+			}
+			function z() {
+				hideall();
+				var rand = Math.floor(Math.random() * 8);
+				if (rand == 1) {
+					get('p3').innerHTML = 'you run for your life, the wolves notice you and start to give chase they almost reach you but you manage to climb a tree just in time, you get back down about an hour later when they move along.';
+					show('button1');
+					show('button2');
+					get('button1').innerHTML = 'Wait';
+					get('button2').innerHTML = 'Walk around';
+					get('button1').onclick = wait;
+					get('button2').onclick = walk;
+				} 
+				else {
+					get('p3').innerHTML = 'you run for your life but the wolves are faster.(reload to try again)';
+				}
+			}
+			}
+			},1000)
+		}
+	function wait() { // wait function
+		animation();
+		hideall();
+		setTimeout(function(){
+		var waittext = ['you wait for one hour, nothing happens', 'you see a pack of wolves', 'you see a white dingo but it disappears when you blink']
+		var rand = Math.floor(Math.random() * 10);
+		if (rand > 7) {
+			get('p3').innerHTML = waittext[1];
+			show('button1');
+			get('button1').innerHTML = 'Oh no';
+			get('button1').onclick = wolves;
+		}
+		else if (rand == 6) {
+			get('p3').innerHTML = waittext[2];
+			show('button1');
+			show('button2');
+			get('button1').innerHTML = 'Wait';
+			get('button2').innerHTML = 'Walk around';
+			if (compass > 0) {
+			show('button3');
+			get('button3').innerHTML = 'Navigate with compass'
+			get('button3').onclick = navigate;
+		}
+		}
+		else{
+			get('p3').innerHTML = waittext[0];
+			show('button1');
+			show('button2');
+			get('button1').innerHTML = 'Wait';
+			get('button2').innerHTML = 'Walk around';
+			if (compass > 0) {
+			show('button3');
+			get('button3').innerHTML = 'Navigate with compass'
+			get('button3').onclick = navigate;
+		}
+	}
+	function wolves() { // wolves function
+			hideall();
+			show('button1');
+			show('button2');
+			show('button3');
+			get('button1').innerHTML = 'Do nothing';
+			get('button2').innerHTML = 'Hide';
+			get('button3').innerHTML = 'RUN!';
+			get('button1').onclick = x;
+			get('button2').onclick = y;
+			get('button3').onclick = z;
+			function x() {
+				hideall();
+				var rand = Math.floor(Math.random() * 4);
+				if (rand == 1) {
+					get('p3').innerHTML = 'you remain still and quiet and they pass without noticing you';
+					show('button1');
+					show('button2');
+					get('button1').innerHTML = 'Wait';
+					get('button2').innerHTML = 'Walk around';
+					get('button1').onclick = wait;
+					get('button2').onclick = walk;
+				} 
+				else {
+					get('p3').innerHTML = 'you remain still, but one of the wolves turn towards you and starts growling, the last thing you see is a pack of wolves running at you.(reload to try again)';
+				}	
+			}
+			function y() {
+				hideall();
+				var rand = Math.floor(Math.random() * 10);
+				if (rand == 0) {
+					get('p3').innerHTML = 'you try to make it behind the trees but the wolves see you.(reload to try again)'
+				} 
+				else {
+					get('p3').innerHTML = 'you quickly hide behind some trees and let them pass, you come out after they pass.'
+					show('button1');
+					show('button2');
+					get('button1').innerHTML = 'Wait';
+					get('button2').innerHTML = 'Walk around';
+					get('button1').onclick = wait;
+					get('button2').onclick = walk;
+					if (compass > 0) {
+						show('button3');
+						get('button3').innerHTML = 'Navigate with compass';
+						get('button3').onclick = navigate;
+					}
+				}
+			}
+			function z() {
+				hideall();
+				var rand = Math.floor(Math.random() * 8);
+				if (rand == 1) {
+					get('p3').innerHTML = 'you run for your life, the wolves notice you and start to give chase they almost reach you but you manage to climb a tree just in time, you get back down about an hour later when they move along.';
+					show('button1');
+					show('button2');
+					get('button1').innerHTML = 'Wait';
+					get('button2').innerHTML = 'Walk around';
+					get('button1').onclick = wait;
+					get('button2').onclick = walk;
+				} 
+				else {
+					get('p3').innerHTML = 'you run for your life but the wolves are faster.(reload to try again)';
+				}
+			}
+			}
+			},1000)
+		}
+	function navigate() {
+		console.log(northcoords + ' north or south idk and ',eastcoords + ' east or west again idk');
+		hideall();
+		get('p3').innerHTML = 'You use the compass it reads the numbers ' + northcoords +', ' + eastcoords + '. Which way do you go?';
+		show('button1');
+		show('button2');
+		show('button3');
+		show('button4');
+		show('button5');
+		get('button1').innerHTML = 'North';
+		get('button2').innerHTML = 'South';
+		get('button4').innerHTML = 'west';
+		get('button5').innerHTML = 'Walk around instead';
+		get('button3').innerHTML = 'east'
+		get('button1').onclick = north;
+		get('button2').onclick = south;
+		get('button4').onclick = west;
+		get('button3').onclick = east;
+		get('button5').onclick = walk;
+
+		function north() {
+			hideall();
+			northcoords++;
+			get('p3').innerHTML = 'You walk north for a bit but you see nothing';
+			show('button1');
+			show('button2');
+			show('button3');
+			get('button1').innerHTML = 'Wait';
+			get('button2').innerHTML = 'Walk around';
+			get('button3').innerHTML = 'Navigate';
+			get('button1').onclick = wait;
+			get('button2').onclick = walk;
+			get('button3').onclick = navigate
+			if (northcoords == 3 && eastcoords == 1) {
+				farm();
+			}
+			else if (northcoords == -2 && eastcoords ==3) {
+				keyhole();
+			}
+		}
+		function south() {
+			hideall();
+			northcoords--;
+			get('p3').innerHTML = 'You walk south for a bit but you see nothing of interset';
+			show('button1');
+			show('button2');
+			show('button3');
+			get('button1').innerHTML = 'Wait';
+			get('button2').innerHTML = 'Walk around';
+			get('button3').innerHTML = 'Navigate';
+			get('button1').onclick = wait;
+			get('button2').onclick = walk;
+			get('button3').onclick = navigate
+			if (northcoords == 3 && eastcoords == 1) {
+				farm();
+			}
+			else if (northcoords == -2 && eastcoords ==3) {
+				keyhole();
+			}
+		}
+		function east() {
+			hideall();
+			eastcoords++;
+			get('p3').innerHTML = 'You go east...You see snow.'
+			show('button1');
+			show('button2');
+			show('button3');
+			get('button1').innerHTML = 'Wait';
+			get('button2').innerHTML = 'Walk around';
+			get('button3').innerHTML = 'Navigate';
+			get('button1').onclick = wait;
+			get('button2').onclick = walk;
+			get('button3').onclick = navigate
+			if (northcoords == 3 && eastcoords == 1) {
+				farm();
+			}
+			else if (northcoords == -2 && eastcoords ==3) {
+				keyhole();
+			}
+
+		}
+		function west() {
+			hideall();
+			eastcoords--;
+			get('p3').innerHTML = 'You go west,you see some snow and...snow'
+			show('button1');
+			show('button2');
+			show('button3');
+			get('button1').innerHTML = 'Wait';
+			get('button2').innerHTML = 'Walk around';
+			get('button3').innerHTML = 'Navigate';
+			get('button1').onclick = wait;
+			get('button2').onclick = walk;
+			get('button3').onclick = navigate
+			if (northcoords == 3 && eastcoords == 1) {
+				farm();
+			}
+			else if (northcoords == -2 && eastcoords ==3) {
+				keyhole();
+			}
+		}
+		function farm() {
+			hideall();
+			get('p3').innerHTML = 'You are at the front of an abandoned farm';
+			show('button1');
+			show('button2');
+			show('button3');
+			get('button1').innerHTML = 'Wait';
+			get('button2').innerHTML = 'Walk around';
+			get('button3').innerHTML = 'Navigate';
+			get('button1').onclick = wait;
+			get('button2').onclick = walk;
+			get('button3').onclick = navigate;
+			show('button4');
+			get('button4').innerHTML = 'Walk into the farm';
+			get('button4').onclick = farmcourtyard;
+		}
+		function farmcourtyard() {
+			hideall();
+			get('p3').innerHTML = 'you are in the courtyard of the farm';
+			show('button1');
+			show('button2');
+			show('button3');
+			show('button4');
+			get('button1').innerHTML = 'Exit the farm';
+			get('button2').innerHTML = 'Search the farmhouse';
+			get('button3').innerHTML = 'Search the barn';
+			get('button4').innerHTML = 'Search the well';
+			get('button1').onclick = farm;
+			get('button2').onclick = farmhouse;
+			get('button3').onclick = barn;
+			get('button4').onclick = well;
+		}
+		function farmhouse() {
+			hideall();
+				if (searchedhouse < 1) {
+				get('p3').innerHTML = 'The house has been stripped clean of everything, but you find a single cog in the bedroom.'
+				cog++
+				get('cogs').innerHTML = 'You have ' +cog+' cog.'
+				searchedhouse++
+				flash('inventorytext');
+				show('button1');
+				get('button1').innerHTML = 'Leave the house';
+				get('button1').onclick = farmcourtyard;
+			}
+			else if (searchedhouse > 0) {
+				get('p3').innerHTML = 'The house has been stripped clean of everything';
+				show('button1');
+				get('button1').innerHTML = 'Leave the house';
+				get('button1').onclick = farmcourtyard;
+			}
+		}
+		function barn() {
+			hideall();
+			get('p3').innerHTML = 'You search the barn and find some machinary with a missing cog';
+			show('button1');
+				get('button1').innerHTML = 'Leave the barn';
+				get('button1').onclick = farmcourtyard;
+			if (cog > 0) {
+				get('p3').innerHTML = 'you insert the cog and pull the lever, you hear something from the well';
+				show('button1');
+				get('button1').innerHTML = 'Leave the barn';
+				get('button1').onclick = farmcourtyard;
+				cog--
+				activemachine++
+				get('cogs').innerHTML = '';
+			}
+			else if (activemachine > 0) {
+				get('p3').innerHTML = 'the machinary is running...you should check the well';
+				show('button1');
+				get('button1').innerHTML = 'Leave the barn';
+				get('button1').onclick = farmcourtyard;
+			}
+		}
+		function well() {
+			hideall();
+			get('p3').innerHTML = 'just a normal well, but there is a rope leading down into it but you cant see what it leads to.';
+			show('button1');
+				get('button1').innerHTML = 'Leave the well';
+				get('button1').onclick = farmcourtyard;
+			if (activemachine > 0) {
+				get('p3').innerHTML = 'a bucket has risen to the top of the well and there is a key inside, on the key, -2,3 is scratched on it';
+				get('cogs').innerHTML = 'You have a key(-2,3)';
+				flash('inventorytext');
+				show('button1');
+				get('button1').innerHTML = 'Leave the well';
+				get('button1').onclick = farmcourtyard;
+			}
+			if (key > 0) {
+				get('p3').innerHTML = 'there is a bucket there.';
+				show('button1');
+				get('button1').innerHTML = 'Leave the well';
+				get('button1').onclick = farmcourtyard;
+			}
+			key++
+		}
+		}
+		function keyhole() {
+			hideall();
+			get('p3').innerHTML = 'you see a wall with a key hole in it...You do not have the key though';
+			show('button1');
+			show('button2');
+			show('button3');
+			get('button1').innerHTML = 'Wait';
+			get('button2').innerHTML = 'Walk around';
+			get('button3').innerHTML = 'Navigate';
+			get('button1').onclick = wait;
+			get('button2').onclick = walk;
+			get('button3').onclick = navigate;
+			if (key > 0) {
+				get('p3').innerHTML = 'you see a wall with a keyhole in it';
+				show('button4');
+				get('button4').innerHTML = 'Unlock';
+				get('button4').onclick = insidekeycave
+			}
+		}
+		function insidekeycave() {
+			hideall();
+			get('p3').innerHTML = 'you see 2 corridoors and the numbers 10100111001 marked on it'
+			show('button1');
+			show('button2');
+			get('button1').innerHTML = 'Go left';
+			get('button2').innerHTML = 'Go right';
+			get('button1').onclick = death;
+			get('button2').onclick = correct;
+			direction++
+		}
+		function correct() {
+			animation();
+			hideall();
+			setTimeout(function(){
+			if (direction == 1) {
+				get('p3').innerHTML = 'You go right and you see 2 corridoors';
+			}
+			else if (direction == -1) {
+				get('p3').innerHTML = 'You go left, you still see 2 corridoors';
+			}
+			direction = 0;
+			var binary = ['0','1','0','0','1','1','1','0','0','1'];
+			 if (binary[binarycount] == '0') {
+			 	show('button1');
+			show('button2');
+			get('button1').innerHTML = 'Go left';
+			get('button2').innerHTML = 'Go right';
+			get('button1').onclick = correct;
+			get('button2').onclick = death;
+				console.log('correct!');
+				console.log(binary[binarycount]);
+				direction--
+
+			}
+			else if (binary[binarycount] == '1') {
+				show('button1');
+			show('button2');
+			get('button1').innerHTML = 'Go left';
+			get('button2').innerHTML = 'Go right';
+			get('button1').onclick = death;
+			get('button2').onclick = correct;
+				console.log('correct!');
+				console.log(binary[binarycount]);
+				direction++
+			}
+			else {
+				get('p3').innerHTML = 'At the end of the corridoor there is a large room, with a wolf staring at you';
+				show('button1');
+				get('button1').innerHTML = 'Oh no';
+				get('button1').onclick = wolfpet;
+			}
+			binarycount++
+			},1000)
+		}
+		function death() {
+			hideall();
+			get('p3').innerHTML = 'Looks like you have died(reload to try again)';
+		}
+		function wolfpet() {
+			hideall();
+			get('p3').innerHTML = 'It walks up to you and wags its tail, you now have a pet wolf, whats its name?'
+			show('inputbox')
+			get('inputbox').value = 'Pause';
+			show('button1');
+			get('button1').innerHTML = 'Ok';
+			get('button1').onclick = wolfpetget;
+		}
+		function wolfpetget() {
+			hideall();
+			console.log(wolfname + ' what a cool name for a doggo')
+			flash('inventorytext');
+			wolfname = get('inputbox').value;
+			get('p3').innerHTML = wolfname +', leads you to a vault door.'
+			if (wolfname == 'wolf') {
+				get('welf').id = 'welfshow';
+			}
+			else
+			{
+			get('wolf').innerHTML = 'You have a pet wolf. (' + wolfname +')';
+		}
+			show('button1');
+			get('button1').innerHTML = 'Ok';
+			get('button1').onclick = knife;
+		}
+		function knife() {
+			hideall();
+			get('p3').innerHTML = 'You try to open the door, it doesnt open, but there is a panel on the front held on with 4 screws';
+			show('button1');
+			get('button1').innerHTML = 'find a screw driver';
+			show('button2');
+			get('button2').innerHTML = 'push the vault door';
+			get('button2').onclick = asdf;
+			get('button1').onclick = screwdriver;
+
+		}
+		function asdf() {
+			hideall();
+			get('p3').innerHTML = 'You push on the door, nothing happens and ' + wolfname +' silently judges you.';
+			show('button1');
+			get('button1').innerHTML = 'find a screw driver';
+		}
+		function screwdriver() {
+			hideall();
+			get('p3').innerHTML = 'You stare at ' + wolfname + '. He falls asleep so you look around harder and find one. You also see a computer while searching'
+			screwdriver++
+			get('screwdriveritem').innerHTML = 'You have a screw driver';
+			flash('inventorytext');
+			show('button1');
+			show('button2');
+			get('button1').onclick = computer;
+			get('button2').onclick = vault;
+			get('button1').innerHTML = 'Search the computer'
+			get('button2').innerHTML = 'Open the panel on the vault door'
+		}
+		function computer() {
+			hideall();
+			get('p3').innerHTML = 'You look at the monitor and see a text file named: PASSWORDS DO NOT LOOK. You look at it and the code for the vault is 7331';
+			hascode++
+			show('button1');
+			get('button1').onclick = vault;
+			get('button1').innerHTML = 'Walk over to the vault';
+		}
+		function vault() {
+			hideall();
+			if (hascode > 0) {
+				hideall();
+				get('p3').innerHTML = 'You enter the code into the display and you hear a wirring sound and the door open ajar and ' + wolfname +' looks excited';
+				show('button1');
+				get('button1').onclick = endgame;
+				get('button1').innerHTML = 'Enter the vault'
+			}
+			else {
+				get('p3').innerHTML = 'You unscrew the vault and see a display, it looks like you need a code.'
+				show('button1');
+				get('button1').onclick = computer;
+				get('button1').innerHTML = 'Search the computer for a code';
+			}
+
+		}
+		function endgame() {
+			get('p3').innerHTML = 'You see large server banks or battery banks and a teleporter looking thing that is turned on'
+			show('button1');
+			get('button1').onclick = end;
+			get('button1').innerHTML = 'Walk through teleporter';
+		}
+		function end() {
+			hideall();
+			get('p3').innerHTML = 'You pick up ' +wolfname+ ' and use the teleporter, you teleport to your house with ' +wolfname+ '. Congratulations you win!';
+			if (gold > 0) {
+				goldsum = gold * 600;
+				get('explain').innerHTML = 'Becasue of the gold coins you have assuming that each coin is worth $600 you are now $' + goldsum + ' richer. yay!'
+			}
+		}
+
+	}
+}
+
+
+
+
+</script>
+</body>
+</html>
