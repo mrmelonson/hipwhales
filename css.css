@@ -144,6 +144,10 @@ h2 { text-align: center;
     display: block;
   }
 
+  .whale img {
+    border-radius: 12px;
+  }
+
 
     
 
