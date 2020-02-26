@@ -1,118 +1,174 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Hip Whales</title>
-  <link rel="icon" href="icon.png">
-  <link rel="stylesheet" href="css.css" type="text/css"/>
-  <script type="text/javascript" src="javascript.js"></script>
-  <style>
+    <title>Hip Whales</title>
+    <link rel="icon" href="icon.png">
+    <link rel="stylesheet" href="css.css" type="text/css" />
+    <script type="text/javascript" src="javascript.js"></script>
+    <style>
+        .awesome {
+            text-align: center;
+            left: 49%;
+        }
 
-  
-  
-  .awesome { text-align: center;
-  left:49%;
-  }
-  
-  .whale { text-align: center;
-  left:49%;
-  }
-  
-  #section {
-    margin-left:15%;
-    margin-right:15%;
-  }
-  .button {
-  display: inline-block;
-  border-radius: 12px;
-  background-color: #4CAf50;
-  border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 28px;
-  font-family: "Comic Sans MS";
-  padding: 20px;
-  width: 200px;
-  transition: all 0.1s;
-  cursor: pointer;
-  margin: 5px;
-  box-shadow: 0 9px #999;
-}
+        .whale {
+            text-align: center;
+            left: 49%;
+        }
 
-.button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
+        .whale_gallery {
+            margin: 100px;
+            border: 10px solid purple;
+            float: center;
+            width: 70%;
+            border-radius:5px
+        }
 
-.button span:after {
-  content: ">>";
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: 0px;
-  transition: 0.5s;
-}
+        .whale_gallery img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
 
-.button:hover span {
-  padding-right: 25px;
-}
+        #section {
+            margin-left: 15%;
+            margin-right: 15%;
+        }
 
-.button:hover span:after {
-  opacity: 1;
-  right: 0;
-}
+        .button {
+            display: inline-block;
+            border-radius: 12px;
+            background-color: #4CAf50;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 28px;
+            font-family: "Comic Sans MS";
+            padding: 20px;
+            width: 200px;
+            transition: all 0.1s;
+            cursor: pointer;
+            margin: 5px;
+            box-shadow: 0 9px #999;
+        }
 
-.button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
-  
-    
-  </style>
-  </head>
-  <body>
-   </script>
-   
-   <div id="header">
-      <h1>Gallery</h1>
-   </div>
-   
-   <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="secretwhale.html">Whale</a></li>
-      <li><a href="helpwhale.html">Help whales</a></li>
-      <li><a href="updates.html">Updates</a></li>
-      <li><a class="active" href="gallery.html">Gallery</a></li>
-      <li><a href="aboutus.html">About us</a></li>
-      <li><a href="contacts.html">Contacts</a></li>
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button span:after {
+            content: ">>";
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: 0px;
+            transition: 0.5s;
+        }
+
+        .button:hover span {
+            padding-right: 25px;
+        }
+
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+        .button:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+    </style>
+</head>
+
+<body>
+    </script>
+
+    <div id="header">
+        <h1>Gallery</h1>
+    </div>
+
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="secretwhale.html">Whale</a></li>
+        <li><a href="helpwhale.html">Help whales</a></li>
+        <li><a href="updates.html">Updates</a></li>
+        <li><a class="active" href="gallery.html">Gallery</a></li>
+        <li><a href="aboutus.html">About us</a></li>
+        <li><a href="contacts.html">Contacts</a></li>
     </ul>
 
-  <div id="section">
-  <h2>Welcome to HipWhales.info's Gallery</h2>
-  <h3>Here we have the finest and hippest whales on earth</h3>
-  <center><a href="gallery2.html"><button class="button"><span>Next Page</span></button></a></center>
-  <br>
-  <div class="whale">
-  <img  src="imgs/img1.jpg" width="75%" height="75%">
-  <img  src="imgs/img6.jpg" width="75%" height="75%">
-  <img  src="imgs/img3.jpg">
-  <img  src="imgs/img4.jpg">
-  <img  src="imgs/img5.jpg">
-  <img  src="imgs/img2.jpg">
-  <img  src="imgs/img7.jpg" width="50%" height="50%">
-  <img  src="imgs/img8.gif">
-  <img  src="imgs/img9.jpg" width="50%" height="50%">
+    <div id="section">
+        <h2>Welcome to HipWhales.info's Gallery</h2>
+        <h3>Here we have the finest and hippest whales on earth</h3>
+        <center><a href="gallery2.html"><button class="button"><span>Next Page</span></button></a></center>
+
+        <center>
+            <div class="whale_gallery">
+                <a target="_blank" href="https://insideclimatenews.org/species/mammals/beluga-whale">
+                    <img src="https://insideclimatenews.org/sites/default/files/styles/colorbox_full/public/Delphinapterus_leucas_2.jpg?itok=PgX3QSDR">
+                </a>
+            </div>
+
+            <div class="whale_gallery">
+                <a target="_blank" href="https://video.nationalgeographic.com/video/animals-source/0000016c-005c-dbf3-ab7f-825e1f240000">
+                    <img src="https://pmdvod.nationalgeographic.com/NG_Video/86/763/190717-south-africa-humpback-whales-comeback-animals.jpg">
+                </a>
+            </div>
+
+            <div class="whale_gallery">
+                <a target="_blank" href="https://unsplash.com/photos/lwACYK8ScmA">
+                    <img src="https://images.unsplash.com/photo-1568430462989-44163eb1752f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80">
+                </a>
+            </div>
+
+            <div class="whale_gallery">
+                <a target="_blank" href="https://en.wikipedia.org/wiki/Killer_whale#/media/File:Killerwhales_jumping.jpg">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Killerwhales_jumping.jpg">
+                </a>
+            </div>
+
+            <div class="whale_gallery">
+                <a target="_blank" href="https://oceana.org/marine-life/marine-mammals/blue-whale">
+                    <img src="https://oceana.org/sites/default/files/styles/lightbox_full/public/blue_whale_0.jpg?itok=ot2r7OSJ">
+                </a>
+            </div>
+
+            <div class="whale_gallery">
+                <a target="_blank" href="imgs/img6.jpg">
+                    <img src="https://media.nationalgeographic.org/assets/photos/000/287/28780.jpg">
+                </a>
+            </div>
+
+            <div class="whale_gallery">
+                <a target="_blank" href="https://www.nationalgeographic.org/activity/people-and-whales-a-history/#sperm-whale">
+                    <img src="imgs/img7.jpg">
+                </a>
+            </div>
+            <div class="whale_gallery">
+                <a target="_blank" href="https://wallpapercave.com/w/Kvd9poP">
+                    <img src="https://wallpapercave.com/wp/Kvd9poP.jpg">
+                </a>
+            </div>
+            <div class="whale_gallery">
+                <a target="_blank" href="https://www.nationalgeographic.com/animals/fish/w/whale-shark/">
+                    <img src="https://www.nationalgeographic.com/content/dam/yourshot/2014/05/3636516.jpg">
+                </a>
+            </div>
+        </center>
+    <center><a href="gallery2.html"><button class="button"><span>Next Page</span></button></a></center>
+    <br>
     </div>
-  <br>
-  <center><a href="gallery2.html"><button class="button"><span>Next Page</span></button></a></center>
-  <br>
-  </div>
-  </div>
-  <div id="footer">
-    <p id="footer_text">Created by Zelenyy -- Copyright Hipwhale.info 2016 - * &copy;</p>
-  </div>
-  
-  </body>
+    </div>
+    <div id="footer">
+        <p id="footer_text">Created by Zelenyy -- Copyright Hipwhale.info 2016 - * &copy;</p>
+    </div>
+
+</body>
+
 </html>
