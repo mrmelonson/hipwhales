@@ -1,129 +1,139 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Hip Whales</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-130560154-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130560154-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'UA-130560154-1');
-</script>
-<script type="text/javascript" src="javascript.js"></script>
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-130560154-1');
+  </script>
+  <script type="text/javascript" src="javascript.js"></script>
 
   <link rel="icon" href="icon.png">
-  <link rel="stylesheet" href="css.css" type="text/css"/>
+  <link rel="stylesheet" href="css.css" type="text/css" />
   <style>
+    .awesome {
+      text-align: center;
+      left: 49%;
+    }
+
+    .whale {
+      text-align: center;
+      left: 49%;
+    }
 
 
-  .awesome { text-align: center;
-  left:49%;
-  }
-  
-  .whale { text-align: center;
-  left:49%;
-  }
-  
-  .Whale{
-    border-radius:12px;
-  }
+    .button {
+      display: inline-block;
+      border-radius: 12px;
+      background-color: #4CAf50;
+      border: none;
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 28px;
+      font-family: "Comic Sans MS";
+      padding: 20px;
+      width: 200px;
+      transition: all 0.1s;
+      cursor: pointer;
+      margin: 5px;
+      box-shadow: 0 9px #999;
+    }
 
-  
-.button {
-  display: inline-block;
-  border-radius: 12px;
-  background-color: #4CAf50;
-  border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 28px;
-  font-family: "Comic Sans MS";
-  padding: 20px;
-  width: 200px;
-  transition: all 0.1s;
-  cursor: pointer;
-  margin: 5px;
-  box-shadow: 0 9px #999;
-}
-
-.button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
+    .button span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
       background-color: none;
-    -webkit-animation-name: example; /* Chrome, Safari, Opera */
-    -webkit-animation-duration: 0.2s; /* Chrome, Safari, Opera */
-    animation-name: example;
-    animation-duration: 0.2s;
-    animation-iteration-count: infinite;
-}
+      -webkit-animation-name: example;
+      /* Chrome, Safari, Opera */
+      -webkit-animation-duration: 0.2s;
+      /* Chrome, Safari, Opera */
+      animation-name: example;
+      animation-duration: 0.2s;
+      animation-iteration-count: infinite;
+    }
 
-.button span:after {
-  content: "!!";
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: 0px;
-  transition: 0.5s;
+    .button span:after {
+      content: "!!";
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: 0px;
+      transition: 0.5s;
       background-color: none;
-    -webkit-animation-name: example; /* Chrome, Safari, Opera */
-    -webkit-animation-duration: 0.2s; /* Chrome, Safari, Opera */
-    animation-name: example;
-    animation-duration: 0.2s;
-    animation-iteration-count: infinite;
-}
+      -webkit-animation-name: example;
+      /* Chrome, Safari, Opera */
+      -webkit-animation-duration: 0.2s;
+      /* Chrome, Safari, Opera */
+      animation-name: example;
+      animation-duration: 0.2s;
+      animation-iteration-count: infinite;
+    }
 
-.button:hover span {
-  padding-right: 25px;
-}
+    .button:hover span {
+      padding-right: 25px;
+    }
 
-.button:hover span:after {
-  opacity: 1;
-  right: 0;
+    .button:hover span:after {
+      opacity: 1;
+      right: 0;
       background-color: none;
-    -webkit-animation-name: example; /* Chrome, Safari, Opera */
-    -webkit-animation-duration: 0.2s; /* Chrome, Safari, Opera */
-    animation-name: example;
-    animation-duration: 0.2s;
-    animation-iteration-count: infinite;
-}
+      -webkit-animation-name: example;
+      /* Chrome, Safari, Opera */
+      -webkit-animation-duration: 0.2s;
+      /* Chrome, Safari, Opera */
+      animation-name: example;
+      animation-duration: 0.2s;
+      animation-iteration-count: infinite;
+    }
 
-.button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+    .button:active {
+      background-color: #3e8e41;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
       background-color: none;
-    -webkit-animation-name: example; /* Chrome, Safari, Opera */
-    -webkit-animation-duration: 0.2s; /* Chrome, Safari, Opera */
-    animation-name: example;
-    animation-duration: 0.2s;
-    animation-iteration-count: infinite;
-}
-  
-.button {
-    background-color: none;
-    -webkit-animation-name: example; /* Chrome, Safari, Opera */
-    -webkit-animation-duration: 0.2s; /* Chrome, Safari, Opera */
-    animation-name: example;
-    animation-duration: 0.2s;
-    animation-iteration-count: infinite;
-}
+      -webkit-animation-name: example;
+      /* Chrome, Safari, Opera */
+      -webkit-animation-duration: 0.2s;
+      /* Chrome, Safari, Opera */
+      animation-name: example;
+      animation-duration: 0.2s;
+      animation-iteration-count: infinite;
+    }
 
-
-    
+    .button {
+      background-color: none;
+      -webkit-animation-name: example;
+      /* Chrome, Safari, Opera */
+      -webkit-animation-duration: 0.2s;
+      /* Chrome, Safari, Opera */
+      animation-name: example;
+      animation-duration: 0.2s;
+      animation-iteration-count: infinite;
+    }
   </style>
-  </head>
-  <body>
-    <script>
-      
-      function play(){var audio = document.getElementById("audio"); audio.play();}
-    </script>
+</head>
+
+<body>
+  <script>
+    function play() {
+      var audio = document.getElementById("audio");
+      audio.play();
+    }
+  </script>
   <div id="header">
-      <img class="logo" src="imgs/logo.png">
+    <img class="logo" src="imgs/logo.png">
   </div>
   <ul>
     <li><a class="active" href="index.html">Home</a></li>
@@ -135,40 +145,23 @@
     <li><a href="contacts.html">Contacts</a></li>
   </ul>
   <div id="section">
-  <h2>Welcome to HipWhales.info</h2>
-  <h3>Here we have the finest and hippest whales on earth</h3>
-  
-  
-  <center><button onclick="play()" class="button">AWESOME</button></center>
-  <audio id="audio" src="awesome.wav" ></audio>
+    <h2>Welcome to HipWhales.info</h2>
+    <h3>Here we have the finest and hippest whales on earth</h3>
+
+
+    <center><button onclick="play()" class="button">AWESOME</button></center>
+    <audio id="audio" src="awesome.wav"></audio>
   </div>
 
   <h3>Click the whale to view our gallery</h3>
   <div class="whale">
     <a class="gallery" href="gallery.html">
-  <img class="Whale" src="imgs/img2.jpg" alt="whales"/>
-  </a>
-  <div id="footer">
-    <p id="footer_text"></p>
-  </div>
-  
-  </body>
+      <img src="imgs/img2.jpg" alt="whales" />
+    </a>
+    <div id="footer">
+      <p id="footer_text"></p>
+    </div>
+
+</body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
