@@ -130,6 +130,20 @@ h2 { text-align: center;
     background: linear-gradient(to top, green, lightblue, green);
   }
 
+  .whale_gallery {
+    margin: 100px;
+    border: 10px solid purple;
+    float: center;
+    width: 70%;
+    border-radius:5px
+  }
+
+  .whale_gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
 
     
 
